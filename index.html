@@ -1,31 +1,26 @@
-<!Doctype html>
-<html>
-   <head>
-        <title>Just-Finger-Can-Count-Only</title>
-        <link rel="stylesheet" href="styles/just-fingers-only-project.css">
-   </head>
-   <body>
-    <p class="title-info">Just Finger Can Count Only </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Game</title>
+      <link rel="stylesheet" href="styles/just-fingers-only-project.css">
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loader"></div>
+  </div>
+  
+  <h1>Just Finger Can Count Only</h1>
+  
+  <div class="game-container">
+      <canvas id="gameCanvas" width="1200" height="600" style="background-color: #bef3ff;"></canvas>
+  </div>
 
-    <p class="choice-paragraph">Pick your Choice</p>
-
-    <button onclick="
-    chooseGame('Just'); " class="choice-button" id="just-button">Just</button>
-
-    <button onclick="
-    chooseGame('Finger'); " class="choice-button">Finger</button>
-
-    <button onclick="
-    chooseGame('Can'); " class="choice-button" >Can</button>
-
-    <button onclick="
-    chooseGame('Count'); " class="choice-button">Count</button>
-
-    <button onclick="
-    chooseGame('Only'); " class="choice-button">Only</button>
-
-    <div class="js-choose-game" style="margin-top: 30px;"></div>
- 
-    <script src="scripts/just-fingers-only-project.js"></script>
-   </body>
+  <footer>
+      © 2025 Maverick Games | Computer Graphics Project
+  </footer>
+    <script src="scripts/just-fingers-only-project.js">
+    </script>
+</body>
 </html>
