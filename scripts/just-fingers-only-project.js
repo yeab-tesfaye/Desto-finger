@@ -17,57 +17,57 @@ let gameState = {
 };
 
 // Game constants
-const CHOICES = ['Just', 'Finger', 'Can', 'Count', 'Only'];
+const CHOICES = ['ደስቶ', 'ፊንገር', 'ካው', 'ካውተር', 'ኦሊ'];
 const MOVES = ['Null', ...CHOICES];
 const IMAGES = {};
 const RULES = {
   Null: { 
-    Null: 'Tie',
-    Just: (pChoice, cChoice) => pChoice === 'Just' ? 'You win!' : cChoice === 'Just' ? 'You lose!' : 'Tie',
-    Finger: (pChoice, cChoice) => pChoice === 'Finger' ? 'You win!' : cChoice === 'Finger' ? 'You lose!' : 'Tie',
-    Can: (pChoice, cChoice) => pChoice === 'Can' ? 'You win!' : cChoice === 'Can' ? 'You lose!' : 'Tie',
-    Count: (pChoice, cChoice) => pChoice === 'Count' ? 'You win!' : cChoice === 'Count' ? 'You lose!' : 'Tie',
-    Only: (pChoice, cChoice) => pChoice === 'Only' ? 'You win!' : cChoice === 'Only' ? 'You lose!' : 'Tie',
+    Null: 'አቻ',
+    ደስቶ: (pChoice, cChoice) => pChoice === 'ደስቶ' ? 'አሸንፈዋል!' : cChoice === 'ደስቶ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ፊንገር: (pChoice, cChoice) => pChoice === 'ፊንገር' ? 'አሸንፈዋል!' : cChoice === 'ፊንገር' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካው: (pChoice, cChoice) => pChoice === 'ካው' ? 'አሸንፈዋል!' : cChoice === 'ካው' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካውተር: (pChoice, cChoice) => pChoice === 'ካውተር' ? 'አሸንፈዋል!' : cChoice === 'ካውተር' ? 'ተሸንፈዋል!' : 'አቻ',
+    ኦሊ: (pChoice, cChoice) => pChoice === 'ኦሊ' ? 'አሸንፈዋል!' : cChoice === 'ኦሊ' ? 'ተሸንፈዋል!' : 'አቻ',
   },
-  Just: {
-    Null: (pChoice, cChoice) => pChoice === 'Just' ? 'You win!' : cChoice === 'Just' ? 'You lose!' : 'Tie',
-    Just: (pChoice, cChoice) => pChoice === 'Finger' ? 'You win!' : cChoice === 'Finger' ? 'You lose!' : 'Tie',
-    Finger: (pChoice, cChoice) => pChoice === 'Can' ? 'You win!' : cChoice === 'Can' ? 'You lose!' : 'Tie',
-    Can: (pChoice, cChoice) => pChoice === 'Count' ? 'You win!' : cChoice === 'Count' ? 'You lose!' : 'Tie',
-    Count: (pChoice, cChoice) => pChoice === 'Only' ? 'You win!' : cChoice === 'Only' ? 'You lose!' : 'Tie',
-    Only: (pChoice, cChoice) => pChoice === 'Just' ? 'You win!' : cChoice === 'Just' ? 'You lose!' : 'Tie',
+  ደስቶ: {
+    Null: (pChoice, cChoice) => pChoice === 'ደስቶ' ? 'አሸንፈዋል!' : cChoice === 'ደስቶ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ደስቶ: (pChoice, cChoice) => pChoice === 'ፊንገር' ? 'አሸንፈዋል!' : cChoice === 'ፊንገር' ? 'ተሸንፈዋል!' : 'አቻ',
+    ፊንገር: (pChoice, cChoice) => pChoice === 'ካው' ? 'አሸንፈዋል!' : cChoice === 'ካው' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካው: (pChoice, cChoice) => pChoice === 'ካውተር' ? 'አሸንፈዋል!' : cChoice === 'ካውተር' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካውተር: (pChoice, cChoice) => pChoice === 'ኦሊ' ? 'አሸንፈዋል!' : cChoice === 'ኦሊ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ኦሊ: (pChoice, cChoice) => pChoice === 'ደስቶ' ? 'አሸንፈዋል!' : cChoice === 'ደስቶ' ? 'ተሸንፈዋል!' : 'አቻ',
   },
-  Finger: {
-    Null: (pChoice, cChoice) => pChoice === 'Finger' ? 'You win!' : cChoice === 'Finger' ? 'You lose!' : 'Tie',
-    Just: (pChoice, cChoice) => pChoice === 'Can' ? 'You win!' : cChoice === 'Can' ? 'You lose!' : 'Tie',
-    Finger: (pChoice, cChoice) => pChoice === 'Count' ? 'You win!' : cChoice === 'Count' ? 'You lose!' : 'Tie',
-    Can: (pChoice, cChoice) => pChoice === 'Only' ? 'You win!' : cChoice === 'Only' ? 'You lose!' : 'Tie',
-    Count: (pChoice, cChoice) => pChoice === 'Just' ? 'You win!' : cChoice === 'Just' ? 'You lose!' : 'Tie',
-    Only: (pChoice, cChoice) => pChoice === 'Finger' ? 'You win!' : cChoice === 'Finger' ? 'You lose!' : 'Tie',
+  ፊንገር: {
+    Null: (pChoice, cChoice) => pChoice === 'ፊንገር' ? 'አሸንፈዋል!' : cChoice === 'ፊንገር' ? 'ተሸንፈዋል!' : 'አቻ',
+    ደስቶ: (pChoice, cChoice) => pChoice === 'ካው' ? 'አሸንፈዋል!' : cChoice === 'ካው' ? 'ተሸንፈዋል!' : 'አቻ',
+    ፊንገር: (pChoice, cChoice) => pChoice === 'ካውተር' ? 'አሸንፈዋል!' : cChoice === 'ካውተር' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካው: (pChoice, cChoice) => pChoice === 'ኦሊ' ? 'አሸንፈዋል!' : cChoice === 'ኦሊ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካውተር: (pChoice, cChoice) => pChoice === 'ደስቶ' ? 'አሸንፈዋል!' : cChoice === 'ደስቶ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ኦሊ: (pChoice, cChoice) => pChoice === 'ፊንገር' ? 'አሸንፈዋል!' : cChoice === 'ፊንገር' ? 'ተሸንፈዋል!' : 'አቻ',
     },
-  Can: {
-    Null: (pChoice, cChoice) => pChoice === 'Can' ? 'You win!' : cChoice === 'Can' ? 'You lose!' : 'Tie',
-    Just: (pChoice, cChoice) => pChoice === 'Count' ? 'You win!' : cChoice === 'Count' ? 'You lose!' : 'Tie',
-    Finger: (pChoice, cChoice) => pChoice === 'Only' ? 'You win!' : cChoice === 'Only' ? 'You lose!' : 'Tie',
-    Can: (pChoice, cChoice) => pChoice === 'Just' ? 'You win!' : cChoice === 'Just' ? 'You lose!' : 'Tie',
-    Count: (pChoice, cChoice) => pChoice === 'Just' ? 'You win!' : cChoice === 'Just' ? 'You lose!' : 'Tie',
-    Only: (pChoice, cChoice) => pChoice === 'Can' ? 'You win!' : cChoice === 'Can' ? 'You lose!' : 'Tie',
+  ካው: {
+    Null: (pChoice, cChoice) => pChoice === 'ካው' ? 'አሸንፈዋል!' : cChoice === 'ካው' ? 'ተሸንፈዋል!' : 'አቻ',
+    ደስቶ: (pChoice, cChoice) => pChoice === 'ካውተር' ? 'አሸንፈዋል!' : cChoice === 'ካውተር' ? 'ተሸንፈዋል!' : 'አቻ',
+    ፊንገር: (pChoice, cChoice) => pChoice === 'ኦሊ' ? 'አሸንፈዋል!' : cChoice === 'ኦሊ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካው: (pChoice, cChoice) => pChoice === 'ደስቶ' ? 'አሸንፈዋል!' : cChoice === 'ደስቶ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካውተር: (pChoice, cChoice) => pChoice === 'ደስቶ' ? 'አሸንፈዋል!' : cChoice === 'ደስቶ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ኦሊ: (pChoice, cChoice) => pChoice === 'ካው' ? 'አሸንፈዋል!' : cChoice === 'ካው' ? 'ተሸንፈዋል!' : 'አቻ',
     },
-  Count: {
-    Null: (pChoice, cChoice) => pChoice === 'Count' ? 'You win!' : cChoice === 'Count' ? 'You lose!' : 'Tie',
-    Just: (pChoice, cChoice) => pChoice === 'Only' ? 'You win!' : cChoice === 'Only' ? 'You lose!' : 'Tie',
-    Finger: (pChoice, cChoice) => pChoice === 'Just' ? 'You win!' : cChoice === 'Just' ? 'You lose!' : 'Tie',
-    Can: (pChoice, cChoice) => pChoice === 'Finger' ? 'You win!' : cChoice === 'Finger' ? 'You lose!' : 'Tie',
-    Count: (pChoice, cChoice) => pChoice === 'Finger' ? 'You win!' : cChoice === 'Finger' ? 'You lose!' : 'Tie',
-    Only: (pChoice, cChoice) => pChoice === 'Count' ? 'You win!' : cChoice === 'Count' ? 'You lose!' : 'Tie',
+  ካውተር: {
+    Null: (pChoice, cChoice) => pChoice === 'ካውተር' ? 'አሸንፈዋል!' : cChoice === 'ካውተር' ? 'ተሸንፈዋል!' : 'አቻ',
+    ደስቶ: (pChoice, cChoice) => pChoice === 'ኦሊ' ? 'አሸንፈዋል!' : cChoice === 'ኦሊ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ፊንገር: (pChoice, cChoice) => pChoice === 'ደስቶ' ? 'አሸንፈዋል!' : cChoice === 'ደስቶ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካው: (pChoice, cChoice) => pChoice === 'ፊንገር' ? 'አሸንፈዋል!' : cChoice === 'ፊንገር' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካውተር: (pChoice, cChoice) => pChoice === 'ፊንገር' ? 'አሸንፈዋል!' : cChoice === 'ፊንገር' ? 'ተሸንፈዋል!' : 'አቻ',
+    ኦሊ: (pChoice, cChoice) => pChoice === 'ካውተር' ? 'አሸንፈዋል!' : cChoice === 'ካውተር' ? 'ተሸንፈዋል!' : 'አቻ',
     },
-  Only: {
-    Null: (pChoice, cChoice) => pChoice === 'Only' ? 'You win!' : cChoice === 'Only' ? 'You lose!' : 'Tie',
-    Just: (pChoice, cChoice) => pChoice === 'Just' ? 'You win!' : cChoice === 'Just' ? 'You lose!' : 'Tie',
-    Finger: (pChoice, cChoice) => pChoice === 'Just' ? 'You win!' : cChoice === 'Just' ? 'You lose!' : 'Tie',
-    Can: (pChoice, cChoice) => pChoice === 'Finger' ? 'You win!' : cChoice === 'Finger' ? 'You lose!' : 'Tie',
-    Count: (pChoice, cChoice) => pChoice === 'Can' ? 'You win!' : cChoice === 'Can' ? 'You lose!' : 'Tie',
-    Only: (pChoice, cChoice) => pChoice === 'Only' ? 'You win!' : cChoice === 'Only' ? 'You lose!' : 'Tie',
+  ኦሊ: {
+    Null: (pChoice, cChoice) => pChoice === 'ኦሊ' ? 'አሸንፈዋል!' : cChoice === 'ኦሊ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ደስቶ: (pChoice, cChoice) => pChoice === 'ደስቶ' ? 'አሸንፈዋል!' : cChoice === 'ደስቶ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ፊንገር: (pChoice, cChoice) => pChoice === 'ደስቶ' ? 'አሸንፈዋል!' : cChoice === 'ደስቶ' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካው: (pChoice, cChoice) => pChoice === 'ፊንገር' ? 'አሸንፈዋል!' : cChoice === 'ፊንገር' ? 'ተሸንፈዋል!' : 'አቻ',
+    ካውተር: (pChoice, cChoice) => pChoice === 'ካው' ? 'አሸንፈዋል!' : cChoice === 'ካው' ? 'ተሸንፈዋል!' : 'አቻ',
+    ኦሊ: (pChoice, cChoice) => pChoice === 'ኦሊ' ? 'አሸንፈዋል!' : cChoice === 'ኦሊ' ? 'ተሸንፈዋል!' : 'አቻ',
     },
 };
 
@@ -81,14 +81,14 @@ async function loadAssets() {
 }
 
 // Canvas drawing functions
-function drawButton(text, x, y, callback) {
-    ctx.fillStyle = '#4CAF50';
+function drawButton(text, x, y, callback, color='#4CAF50') {
+    ctx.fillStyle = color;
     ctx.beginPath();
     ctx.roundRect(x, y, BUTTON_WIDTH, BUTTON_HEIGHT, 8);
     ctx.fill();
     
     ctx.fillStyle = 'white';
-    ctx.font = '16px Arial';
+    ctx.font = '20px Arial';
     ctx.textAlign = 'center';
     ctx.fillText(text, x + BUTTON_WIDTH/2, y + BUTTON_HEIGHT/2 + 6);
     
@@ -139,7 +139,7 @@ function drawImageButton(img, x, y, callback) {
 // Game rendering
 function renderMainMenu() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawText('Pick your Choice', canvas.width/2, 100, 30, '#333');
+    drawText('እንኳን ደህና መጡ! ', canvas.width/2, 100, 30, '#333');
     
     const startX = (canvas.width - (CHOICES.length * BUTTON_WIDTH + (CHOICES.length-1)*SPACING)) / 2;
     gameState.buttons = [];
@@ -160,9 +160,9 @@ function renderGameInterface() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     // Draw choices
-    drawText(`You chose: ${gameState.playerChoice}`, 200, 100, 24,'red');
-    drawText(`Computer chose: ${gameState.computerChoice}`, 200, 145, 24, 'blue');
-    drawText('Choose your move', 600, 200, 40, 'black');
+    drawText(`የእርሶ ምርጫ: ${gameState.playerChoice}`, 200, 100, 24,'red');
+    drawText(`የኮምፒውተር ምርጫ: ${gameState.computerChoice}`, 200, 145, 24, 'blue');
+    drawText('እባክዎ ይምርጡ', 600, 200, 40, 'black');
     
   // Draw circular move buttons
   const startX = (canvas.width - (MOVES.length * (BUTTON_SIZE + SPACING))) / 2;
@@ -210,7 +210,7 @@ function renderResult() {
     // Draw buttons
     const btnX = canvas.width/2 - BUTTON_WIDTH - 10;
     const replayBtn = drawButton(
-        'Play Again',
+        'እንደገና ይጫወቱ',
         btnX,
         450
     );
@@ -220,7 +220,7 @@ function renderResult() {
     };
 
     const resetBtn = drawButton(
-        'Reset Score',
+        'ውጤት ሰርዝ',
         btnX + BUTTON_WIDTH + 20,
         450
     );
@@ -230,9 +230,9 @@ function renderResult() {
     drawScore();
 }
 function drawScore() {
-    drawText(`Wins: ${gameState.score.Wins}`, 100, 500, 20, 'green');
-    drawText(`Losses: ${gameState.score.Losses}`, 200, 500, 20, 'red');
-    drawText(`Ties: ${gameState.score.Ties}`, 300, 500, 20, 'blue');
+    drawText(`ድል: ${gameState.score.Wins}`, 100, 500, 20, 'green');
+    drawText(`ሽንፈት: ${gameState.score.Losses}`, 200, 500, 20, 'red');
+    drawText(`አቻ: ${gameState.score.Ties}`, 300, 500, 20, 'blue');
 }
 // Input handling
 canvas.addEventListener('click', (e) => {
@@ -248,7 +248,7 @@ canvas.addEventListener('click', (e) => {
     });
 });
 
-// Game logic (unchanged from original)
+// Game logic functions
 function getComputerChoice(playerChoice) {
   const choices = CHOICES.filter(c => c !== playerChoice);
   return choices[Math.floor(Math.random() * choices.length)];
@@ -263,9 +263,9 @@ function determineResult(playerMove, computerMove, playerChoice, computerChoice)
 // Score 
 
 function updateScore(result) {
-    if (result === 'You win!') gameState.score.Wins++;
-    else if (result === 'You lose!') gameState.score.Losses++;
-    else if (result === 'Tie') gameState.score.Ties++;
+    if (result === 'አሸንፈዋል!') gameState.score.Wins++;
+    else if (result === 'ተሸንፈዋል!') gameState.score.Losses++;
+    else if (result === 'አቻ') gameState.score.Ties++;
     localStorage.setItem('score', JSON.stringify(gameState.score));
 }
 
@@ -314,12 +314,6 @@ window.addEventListener('load', () => {
     }, 500);
 });
 
-// Update score board
-function updateScoreDisplay() {
-    const score = gameState.score;
-    document.getElementById('scoreBoard').textContent = 
-        `Wins: ${score.Wins} | Losses: ${score.Losses} | Ties: ${score.Ties}`;
-}
 // Initialize game
 loadAssets().then(() => {
     gameLoop();
